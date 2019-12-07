@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_todo/services/db.dart';
 
 void main() => runApp(MaterialApp(
       home: Home(),
@@ -36,7 +37,11 @@ class Home extends StatelessWidget {
         child: Text('click me'),
         tooltip: 'add',
         backgroundColor: Colors.red[600],
-        onPressed: () {},
+        onPressed: () {
+
+          DbService dbService = new DbService();
+          dbService.createRecord();
+        },
       ),
     );
   }
